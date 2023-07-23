@@ -40,10 +40,44 @@ body {
     padding: 0 60px 0 40px;
 }
 
+.wrapper .form-box.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.11s * var(--j));
+    transition: all 0.7s ease-in-out;
+}
+
+.wrapper.active .form-box.login .animation {
+    transform: translateX(-120%);
+    transition-delay: calc(0.11s * var(--i));
+    opacity: 0;
+    filter: blur(10px);
+}
+
 .wrapper .form-box.register {
     right: 0;
     padding: 0 40px 0 60px;
-    display: none;
+    pointer-events: none;
+}
+
+.wrapper.active .form-box.register {
+    pointer-events: auto;
+}
+
+.wrapper .form-box.register .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(0.11s * var(--j));
+    transition: all 0.7s ease-in-out;
+}
+
+.wrapper.active .form-box.register .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.11s * var(--i));
 }
 
 .form-box h2 {
@@ -179,11 +213,45 @@ body {
     padding: 0 40px 60px 150px;   
 }
 
+.wrapper .info-text.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.11s * var(--j));
+    transition: all 0.7s ease-in-out;
+}
+
+.wrapper.active .info-text.login .animation {
+    transform: translateX(120%);
+    transition-delay: calc(0.11s * var(--i));
+    opacity: 0;
+    filter: blur(10px);
+}
+
 .wrapper .info-text.register {
     left: 0;
     text-align: left;
     padding: 0 150px 60px 40px; 
-    display: none;  
+    pointer-events: none;
+}
+
+.wrapper.active .info-text.register {
+    pointer-events: auto;
+}
+
+.wrapper .info-text.register .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(0.11s * var(--j));
+    transition: all 0.7s ease-in-out;
+}
+
+.wrapper.active .info-text.register .animation {
+    transform: translateX(0);
+    transition-delay: calc(0.11s * var(--i));
+    opacity: 1;
+    filter: blur(0);
 }
 
 .info-text h2 {
@@ -207,8 +275,14 @@ body {
     border-bottom: 3px solid #0ef;
     background: linear-gradient(45deg, #081b29, #0ef);
     transform: rotate(10deg) skewY(40deg);
-    /* transform: rotate(0) skewY(0); */
     transform-origin: bottom right;
+    transition: all 1.5s ease-in-out;
+    transition-delay: 1.6s;
+}
+
+.wrapper.active .bg-animate {
+    transform: rotate(0) skewY(0);
+    transition-delay: 0.5s;
 }
 
 .wrapper .bg-animate2 {
@@ -219,11 +293,15 @@ body {
     height: 700px;
     border-top: 3px solid #0ef;
     background:  #081b29;
-    /* transform: rotate(-11deg) skewY(-41deg); */
     transform: rotate(0) skewY(0);
     transform-origin: bottom left;
+    transition: all 1.5s ease-in-out;
+    transition-delay: 0.5s;
 }
 
-
+.wrapper.active .bg-animate2 {
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
+}
 
 
